@@ -1,0 +1,8 @@
+spring:
+  datasource:
+    jndi-name: java:comp/env/jdbc/DefaultDB
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+debug: false
