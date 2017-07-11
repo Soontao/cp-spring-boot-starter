@@ -21,7 +21,7 @@ public class Application extends SpringBootServletInitializer {
 	}
 
 	@GetMapping("/")
-	public String hello() {
-		return "hello hcp";
+	public Object hello() {
+		return "hi, hcp";
 	}
 }
