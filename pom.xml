@@ -69,6 +69,12 @@
 			<groupId>io.springfox</groupId>
 			<artifactId>springfox-swagger2</artifactId>
 			<version>2.7.0</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.slf4j</groupId>
+					<artifactId>slf4j-api</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 		<dependency>
 			<groupId>io.springfox</groupId>
@@ -79,17 +85,29 @@
 			<groupId>io.springfox</groupId>
 			<artifactId>springfox-data-rest</artifactId>
 			<version>2.7.0</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.slf4j</groupId>
+					<artifactId>slf4j-api</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+			<exclusions>
+				<exclusion>
+					<groupId>org.slf4j</groupId>
+					<artifactId>slf4j-api</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 	</dependencies>
 	<!-- active maven profile with -P parameter -->
 	<profiles>
 		<profile>
-			<id>dev</id>
+			<id>h2</id>
 			<activation>
 				<activeByDefault>false</activeByDefault>
 			</activation>
@@ -101,7 +119,7 @@
 			</dependencies>
 		</profile>
 		<profile>
-			<id>standalone</id>
+			<id>log</id>
 			<activation>
 				<activeByDefault>false</activeByDefault>
 			</activation>
