@@ -8,14 +8,17 @@ clone and import project as maven project, run as web application in SAP jvm8 (d
 
 entry is `/rest`, with spring data rest APIs
 
-> run as application with `dev` maven profile in IDE
+> run as application with `dev,standalone` maven profile in IDE
 
 ## build
 
 build with `production` profile in maven
 
 ```bash
-mvn clean package -Pproduction
+# with neo
+mvn clean package
+# with cf
+mvn clean package -Pstandalone
 ```
 
 ## deploy
@@ -27,14 +30,16 @@ package and upload `.war` file to SCP
 start with VM parameter
 
 ```text
--Dspring.profiles.active=production
+-Dspring.profiles.active=neo-production
 ```
 
 ### cloud foundry
 
-with cloud foundry, just use `cf push` command to deploy is ok
+run "cf create-service hanatrial hdi-shared hana" to create service instance before first push
 
-please note the **path** defined in `manifest.yml` 
+with cloud foundry, just use `cf push` command to deploy
+
+please note the **path** defined in `manifest.yml`
 
 ## other
 

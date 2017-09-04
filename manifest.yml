@@ -16,3 +16,10 @@ applications:
 
     # 使用java构建包，主要是包含一个java环境
     buildpack: java_buildpack
+
+    # run "cf create-service hanatrial hdi-shared hana" to create service instance before first push
+    services:
+    - hana
+    
+    env:
+      SPRING_PROFILES_DEFAULT: cf-production

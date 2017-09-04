@@ -80,25 +80,21 @@
 			</activation>
 			<dependencies>
 				<dependency>
-					<groupId>org.slf4j</groupId>
-					<artifactId>slf4j-api</artifactId>
-					<scope>provided</scope>
-				</dependency>
-				<dependency>
 					<groupId>com.h2database</groupId>
 					<artifactId>h2</artifactId>
 				</dependency>
 			</dependencies>
 		</profile>
 		<profile>
-			<id>local</id>
+			<id>standalone</id>
 			<activation>
-				<activeByDefault>true</activeByDefault>
+				<activeByDefault>false</activeByDefault>
 			</activation>
 			<dependencies>
 				<dependency>
-					<groupId>com.h2database</groupId>
-					<artifactId>h2</artifactId>
+					<groupId>org.slf4j</groupId>
+					<artifactId>slf4j-api</artifactId>
+					<scope>provided</scope>
 				</dependency>
 			</dependencies>
 		</profile>
