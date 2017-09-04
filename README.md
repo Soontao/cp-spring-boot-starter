@@ -1,14 +1,20 @@
 # SAP HCP Spring Boot demo
 
-Just an spring boot application could run on sap cloud platform
+Just an spring boot application could run on the SAP cloud platform
 
 ## usage
+
+### neo
 
 clone and import project as maven project, run as web application in SAP jvm8 (default).
 
 entry is `/rest`, with spring data rest APIs
 
+### cloud foundry
+
 > run as application with `dev,standalone` maven profile in IDE
+
+![](https://res.cloudinary.com/digf90pwi/image/upload/v1504528297/2017-09-04_20-28-17_tafrnh.gif)
 
 ## build
 
