@@ -15,10 +15,12 @@ entry is `/rest`, with spring data rest APIs
 build with `production` profile in maven
 
 ```bash
-mvn clean build -Pproduction
+mvn clean package -Pproduction
 ```
 
 ## deploy
+
+### neo
 
 package and upload `.war` file to SCP
 
@@ -28,7 +30,12 @@ start with VM parameter
 -Dspring.profiles.active=production
 ```
 
+### cloud foundry
+
+with cloud foundry, just use `cf push` command to deploy is ok
+
+please note the **path** defined in `manifest.yml` 
+
 ## other
 
 In simple terms, only need to exclude sf4j lib, application could run correctly on SCP.
-
