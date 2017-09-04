@@ -10,12 +10,9 @@ import org.springframework.test.web.servlet.MockMvc;
 import corp.sap.hana.spring.demo.Application;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @RunWith(SpringRunner.class)
 @ContextConfiguration(classes = Application.class)
-// @SpringBootTest(classes = Application.class, webEnvironment =
-// WebEnvironment.MOCK)
 @WebMvcTest(Application.class)
 public class ApplicationTests {
 
@@ -24,7 +21,7 @@ public class ApplicationTests {
 
 	@Test
 	public void homePage() throws Exception {
-		this.mvc.perform(get("/")).andExpect(content().string("hi, hcp"));
+		this.mvc.perform(get("/rest"));
 	}
 
 }
