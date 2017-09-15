@@ -41,7 +41,7 @@ start with VM parameter
 
 ### cloud foundry
 
-run **cf create-service postgresql  v9.4-dev psql** to create `hana` instance before first push
+run **cf create-service postgresql  v9.4-dev psql** to create `psql` instance before first push
 
 `cf` command is provided by [cf cli](https://github.com/cloudfoundry/cli)
 
