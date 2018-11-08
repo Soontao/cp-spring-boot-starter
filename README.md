@@ -1,20 +1,22 @@
-# SAP HCP Spring Boot demo
+# SAP SCP Spring Boot demo
 
 Just an spring boot application could run on the SAP cloud platform
 
 ## development
 
-### neo
-
 clone and import project as maven project, run as web application in SAP tomcat 8 (default).
 
-entry is `/rest`, with spring data rest APIs
+entry is `/rest`, with spring data rest APIs, swagger-ui.html will enable in `http://localhost:8080/swagger-ui.html`
 
-run as web application `h2` maven profile in IDE
+before run locally, pls enable maven `h2` and `log` profile in IDE
 
-### cloud foundry
+```bash
+-Dspring.profiles.active=dev
+```
 
-run as application with `h2,log` maven profile in IDE
+enable spring profile `dev` to use local embedded h2 db in project directory
+
+h2 will generate localdb file, and in `dev` profile, spring will show a web management UI in `http://localhost:8080/h2-console`
 
 ## build package
 
@@ -23,31 +25,17 @@ build war package
 ```bash
 # for neo
 mvn clean package
-# for cf
-mvn clean package -Plog
 ```
 
 ## deploy
-
-### neo
 
 package and upload `.war` file to SCP
 
 start with VM parameter
 
 ```text
--Dspring.profiles.active=neo-production
+-Dspring.profiles.active=production
 ```
-
-### cloud foundry
-
-run **cf create-service postgresql  v9.4-dev psql** to create `psql` instance before first push
-
-`cf` command is provided by [cf cli](https://github.com/cloudfoundry/cli)
-
-just use `cf push` command to deploy
-
-please note the **path** defined in `manifest.yml`.
 
 ## other
 
