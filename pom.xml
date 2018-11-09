@@ -36,11 +36,6 @@
 			</exclusions>
 		</dependency>
 		<dependency>
-			<groupId>io.sentry</groupId>
-			<artifactId>sentry-spring</artifactId>
-			<version>1.7.10</version>
-		</dependency>
-		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-logging</artifactId>
 			<scope>provided</scope>
@@ -99,6 +94,11 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
+		<dependency>
+			<groupId>io.sentry</groupId>
+			<artifactId>sentry-spring</artifactId>
+			<version>1.7.10</version>
+		</dependency>
 	</dependencies>
 	<!-- active maven profile with -P parameter -->
 	<profiles>
@@ -129,6 +129,7 @@
 		</profile>
 	</profiles>
 	<build>
+		<finalName>ROOT</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>

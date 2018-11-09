@@ -26,3 +26,4 @@ nbdist/
 # h2 local db
 local.mv.db
 local*db
+*events*
