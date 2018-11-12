@@ -104,5 +104,5 @@ public abstract class Base {
 	public void setLastModifiedBy(String lastModifiedBy) {
 		this.lastModifiedBy = lastModifiedBy;
 	}
-	
+
 }

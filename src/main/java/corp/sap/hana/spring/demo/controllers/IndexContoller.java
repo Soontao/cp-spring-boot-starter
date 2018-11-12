@@ -10,7 +10,7 @@ import corp.sap.hana.spring.demo.services.IndexService;
 
 @RestController("/v1/api")
 public class IndexContoller {
-	
+
 	@Autowired
 	IndexService indexService;
 

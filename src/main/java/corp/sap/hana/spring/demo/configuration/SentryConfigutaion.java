@@ -12,20 +12,20 @@ import io.sentry.SentryClient;
 @Configuration
 @Profile({ "sentry" })
 public class SentryConfigutaion {
-	
+
 	@Bean
 	public ServletContextInitializer sentryServletContextInitializer() {
-	    return new io.sentry.spring.SentryServletContextInitializer();
+		return new io.sentry.spring.SentryServletContextInitializer();
 	}
-	
+
 	@Bean
 	public HandlerExceptionResolver sentryExceptionResolver() {
-	    return new io.sentry.spring.SentryExceptionResolver();
+		return new io.sentry.spring.SentryExceptionResolver();
 	}
-	
+
 	@Bean
 	public SentryClient sentryClient() {
 		return Sentry.init();
 	}
-	
+
 }

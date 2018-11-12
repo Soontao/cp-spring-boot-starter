@@ -4,24 +4,17 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.aspectj.lang.JoinPoint;
-import org.aspectj.lang.annotation.AfterReturning;
-import org.aspectj.lang.annotation.AfterThrowing;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
-import com.google.common.collect.ImmutableMap;
-import com.google.common.collect.Maps;
+import com.alibaba.fastjson.JSON;
 
 import io.sentry.Sentry;
-import io.sentry.SentryClient;
-import io.sentry.event.Breadcrumb;
-import io.sentry.event.BreadcrumbBuilder;
-import io.sentry.event.Event;
 import io.sentry.event.Breadcrumb.Level;
+import io.sentry.event.BreadcrumbBuilder;
 
 @Aspect
 @EnableAspectJAutoProxy(proxyTargetClass = true)
@@ -45,7 +38,7 @@ public class SentryAspect {
 	@Before("execution(* corp.sap.hana.spring.demo.*.*.*(..))")
 	public void afterCall(JoinPoint jp) throws Throwable {
 		// set args
-		dataMap.put("args", jp.getArgs().toString());
+		dataMap.put("args", JSON.toJSONString(jp.getArgs()));
 		// capture
 		Sentry.getContext().recordBreadcrumb(b.setMessage(jp.toShortString()).build());
 	}
