@@ -18,13 +18,23 @@ enable spring profile `dev` to use local embedded h2 db in project directory
 
 h2 will generate localdb file, and in `dev` profile, spring will show a web management UI in `http://localhost:8080/h2-console`
 
-## build package
+## test
 
-build war package
+test with dev profile(local h2 db & logger)
 
 ```bash
-# for neo
-mvn clean package
+mvn test -Dspring.profiles.active=dev -Ph2,log
+```
+
+and code coverage report will be generated in `cp-spring-boot-starter/target/jacoco-report-ui/index.html`
+
+
+## build package
+
+build war package, skip test
+
+```bash
+mvn clean package -Dmaven.test.skip=true
 ```
 
 ## deploy
