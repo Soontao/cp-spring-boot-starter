@@ -37,6 +37,10 @@ start with VM parameter
 -Dspring.profiles.active=production
 ```
 
+## sentry log
+
+if you want run application with sentry, just enable `sentry` profile in environment, and edit the `DSN` link in `sentry.property`
+
 ## other
 
 In simple terms, only need to exclude *sf4j* lib, application could run correctly on SCP.
