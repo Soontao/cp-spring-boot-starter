@@ -3,8 +3,12 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
 	version="3.0">
-    <resource-ref>
-        <res-ref-name>jdbc/DefaultDB</res-ref-name>
-        <res-type>javax.sql.DataSource</res-type>
-    </resource-ref>
+	<resource-ref>
+		<res-ref-name>jdbc/DefaultDB</res-ref-name>
+		<res-type>javax.sql.DataSource</res-type>
+	</resource-ref>
+	<resource-ref>
+		<res-ref-name>KeyStoreService</res-ref-name>
+		<res-type>com.sap.cloud.crypto.keystore.api.KeyStoreService</res-type>
+	</resource-ref>
 </web-app>

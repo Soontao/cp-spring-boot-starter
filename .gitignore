@@ -27,3 +27,4 @@ nbdist/
 local.mv.db
 local*db
 *events*
+.DS_Store

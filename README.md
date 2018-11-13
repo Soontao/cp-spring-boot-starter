@@ -8,18 +8,15 @@ clone and import project as maven project, run as web application in SAP tomcat 
 
 entry is `/rest`, with spring data rest APIs, swagger-ui.html will enable in `http://localhost:8080/swagger-ui.html`
 
-before run locally, pls enable maven `h2` and `log` profile in IDE
+before run locally, pls enable maven `h2` and `log` profile in IDE.
 
-```bash
--Dspring.profiles.active=dev
-```
+default user is `admin/password`, project disabled csrf token & set option frame as same origin.
 
-enable spring profile `dev` to use local embedded h2 db in project directory
+enable spring profile `-Dspring.profiles.active=dev` to use local embedded h2 db in project directory
 
-h2 will generate localdb file, and in `dev` profile, spring will show a web management UI in `http://localhost:8080/h2-console`
-
-* login path `/login`
-* swagger ui `/swagger-ui.html`
+* h2 db management `http://localhost:8080/h2-console`, jdbc url: `jdbc:h2:file:./local;DB_CLOSE_ON_EXIT=FALSE`
+* login path `http://localhost:8080/login`
+* swagger ui `http://localhost:8080/swagger-ui.html`
 
 ## test
 
@@ -34,7 +31,7 @@ and code coverage report will be generated in `cp-spring-boot-starter/target/jac
 
 ## build package
 
-build war package, skip test
+build war package, skip tests
 
 ```bash
 mvn clean package -Dmaven.test.skip=true
@@ -47,7 +44,7 @@ package and upload `.war` file to SCP
 start with VM parameter
 
 ```text
--Dspring.profiles.active=production
+-Dspring.profiles.active=neo
 ```
 
 ## sentry log
