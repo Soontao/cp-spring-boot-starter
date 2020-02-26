@@ -25,7 +25,7 @@ public class KeyStoreServiceConfiguration {
 	}
 	
 	@Bean
-	@Profile({ "dev" })
+	@Profile({ "!neo" })
 	public KeyStoreService keyStoreServiceDev() throws NamingException {
 		return new KeyStoreService() {
 			
