@@ -1,5 +1,7 @@
 # SAP SCP Spring Boot demo
 
+![Snapshot Build](https://github.com/Soontao/cp-spring-boot-starter/workflows/Snapshot%20Build/badge.svg)
+
 Just a spring boot application could run on the SAP cloud platform
 
 ## development
